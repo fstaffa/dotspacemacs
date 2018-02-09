@@ -332,12 +332,21 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+  (setq ranger-cleanup-on-disable t)
+  (dotspacemacs/user-config/toggles)
+  )
+
+(defun dotspacemacs/user-config/org ()
   (with-eval-after-load 'org
     (setq org-directory "~/data/org")
     (setq org-agenda-files '("~/data/org/default.org" "~/data/org/refile.org"))
     (setq org-default-notes-file "~/data/org/refile.org")
     )
-  (setq ranger-cleanup-on-disable t)
+  )
+
+(defun dotspacemacs/user-config/toggles ()
+  "Spacemacs toggles not intended to be put into layers."
+  (spacemacs/toggle-highlight-indentation-current-column-on)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
