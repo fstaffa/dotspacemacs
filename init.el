@@ -504,18 +504,20 @@ you should place your code here."
 
 (defun dotspacemacs/user-config/org ()
   (with-eval-after-load 'org
-    (setq org-directory "~/data/org")
-    (setq org-agenda-files '("~/data/org/default.org" "~/data/org/refile.org"))
-    (setq org-default-notes-file "~/data/org/refile.org")
-    (setq org-archive-location "~/data/org/archive.org::")
+    (setq org-directory "~/Dropbox/org-mode")
+    (setq org-agenda-files '("~/Dropbox/org-mode/default.org"
+                             "~/Dropbox/org-mode/refile.org"
+                             "~/Dropbox/org-mode/mobile.org"))
+    (setq org-default-notes-file "~/Dropbox/org-mode/refile.org")
+    (setq org-archive-location "~/Dropbox/org-mode/archive.org::")
     (setq org-refile-targets '((org-agenda-files :maxlevel . 3)))
     (setq org-refile-allow-creating-parent-nodes 'confirm)
     (setq org-capture-templates
-          '(("t" "Todo" entry (file "~/data/org/refile.org")
-             "* TODO %?\n%U" :empty-lines 1)
-            ("s" "Standup point" entry (file+headline "~/data/org/refile.org" "Standups")
+          '(("t" "Todo" entry (file+headline "~/Dropbox/org-mode/refile.org" "Todos")
+             "* TODO %?\n%U")
+            ("s" "Standup point" entry (file+headline "~/Dropbox/org-mode/refile.org" "Standups")
              "* %? :standup:")
-            ("r" "Retrospective point" entry (file+headline "~/data/org/refile.org" "Retrospective")
+            ("r" "Retrospective point" entry (file+headline "~/Dropbox/org-mode/refile.org" "Retrospective")
              "* %? :retrospective:")
             )
           )
