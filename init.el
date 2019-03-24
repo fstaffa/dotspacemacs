@@ -524,6 +524,7 @@ you should place your code here."
             )
           )
   )
+  (spacemacs/set-leader-keys-for-major-mode 'org-mode "msd" 'org-cut-subtree)
 )
 
 (defun dotspacemacs/user-config/toggles ()
