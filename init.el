@@ -515,6 +515,8 @@ you should place your code here."
     (setq org-capture-templates
           '(("t" "Todo" entry (file+headline "~/Dropbox/org-mode/refile.org" "Todos")
              "* TODO %?\n%U")
+            ("f" "Followup" entry (file+headline "~/Dropbox/org-mode/refile.org" "Followup")
+             "* TODO %?\n SCHEDULED: %^t")
             ("s" "Standup point" entry (file+headline "~/Dropbox/org-mode/refile.org" "Standups")
              "* %? :standup:")
             ("r" "Retrospective point" entry (file+headline "~/Dropbox/org-mode/refile.org" "Retrospective")
