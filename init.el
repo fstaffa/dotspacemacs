@@ -506,6 +506,17 @@ you should place your code here."
   (dotspacemacs/user-config/org)
   (dotspacemacs/user-config/go)
   (dotspacemacs/user-config/typescript)
+  (dotspacemacs/user-config/git)
+  )
+
+(defun dotspacemacs/user-config/git ()
+  (add-hook 'git-commit-setup-hook
+        '(lambda ()
+            (let ((has-ticket-title (string-match "^[A-Z]+-[0-9]+"
+                                                  (magit-get-current-branch)))
+                  (words (s-split-words (magit-get-current-branch))))
+              (if has-ticket-title
+                  (insert (format "%s-%s " (car words) (car (cdr words))))))))
   )
 
 (defun dotspacemacs/user-config/typescript ()
