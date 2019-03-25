@@ -55,6 +55,7 @@ This function should only modify configuration layer settings."
      markdown
      nginx
      (org :variables org-enable-reveal-js-support t)
+     prettier
      python
      ranger
      semantic
@@ -504,7 +505,13 @@ you should place your code here."
   (dotspacemacs/user-config/firacode)
   (dotspacemacs/user-config/org)
   (dotspacemacs/user-config/go)
+  (dotspacemacs/user-config/typescript)
   )
+
+(defun dotspacemacs/user-config/typescript ()
+  (setq typescript-indent-level 2)
+  (setq typescript-fmt-on-save 'prettier)
+  (setq typescript-fmt-tool 'prettier))
 
 (defun dotspacemacs/user-config/go ()
   (setq go-format-before-save t)
