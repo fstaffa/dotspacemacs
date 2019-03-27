@@ -506,7 +506,13 @@ you should place your code here."
   (dotspacemacs/user-config/org)
   (dotspacemacs/user-config/go)
   (dotspacemacs/user-config/typescript)
+  (dotspacemacs/user-config/javascript)
   (dotspacemacs/user-config/git)
+  )
+
+(defun dotspacemacs/user-config/javascript ()
+  (setq-default js2-basic-offset 2)
+  (setq-default js-indent-level 2)
   )
 
 (defun dotspacemacs/user-config/git ()
