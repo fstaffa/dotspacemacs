@@ -59,7 +59,7 @@ This function should only modify configuration layer settings."
      nginx
      (org :variables org-enable-reveal-js-support t)
      prettier
-     python
+     (python :variables python-test-runner 'pytest)
      ranger
      restclient
      semantic
