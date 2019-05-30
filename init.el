@@ -532,6 +532,9 @@ you should place your code here."
                   (words (s-split-words (magit-get-current-branch))))
               (if has-ticket-title
                   (insert (format "%s-%s " (car words) (car (cdr words))))))))
+
+  (setq magit-repository-directories
+        '(("~/data/onboarding/" . 1)))
   )
 
 (defun dotspacemacs/user-config/typescript ()
