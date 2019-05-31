@@ -1,7 +1,6 @@
-;; -*- mode: emacs-lisp -*-
+;; -*- mode: emacs-lisp; lexical-binding: t -*-
 ;; This file is loaded by Spacemacs at startup.
 ;; It must be stored in your home directory.
-
 
 (defun dotspacemacs/layers ()
   "Layer configuration:
@@ -56,6 +55,7 @@ This function should only modify configuration layer settings."
      ibuffer
      javascript
      markdown
+     multiple-cursors
      nginx
      (org :variables org-enable-reveal-js-support t)
      prettier
@@ -66,6 +66,7 @@ This function should only modify configuration layer settings."
      spell-checking
      syntax-checking
      terraform
+     treemacs
      typescript
      xkcd
      yaml
@@ -159,7 +160,8 @@ It should only modify the values of Spacemacs settings."
    ;; when the current branch is not `develop'. Note that checking for
    ;; new versions works via git commands, thus it calls GitHub services
    ;; whenever you start Emacs. (default nil)
-   dotspacemacs-check-for-update t
+   dotspacemacs-check-for-update nil
+
    ;; If non-nil, a form that evaluates to a package directory. For example, to
    ;; use different package directories for different Emacs versions, set this
    ;; to `emacs-version'. (default 'emacs-version)
@@ -229,7 +231,7 @@ It should only modify the values of Spacemacs settings."
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
-   ;; The leader key
+   ;; The leader key (default "SPC")
    dotspacemacs-leader-key "SPC"
 
    ;; The key used for Emacs commands `M-x' (after pressing on the leader key).
@@ -506,7 +508,6 @@ you should place your code here."
   (setq create-lockfiles nil)
   (setq projectile-project-search-path '("~/data/onboarding" "~/data/programming"))
   (dotspacemacs/user-config/toggles)
-  (dotspacemacs/user-config/firacode)
   (dotspacemacs/user-config/org)
   (dotspacemacs/user-config/go)
   (dotspacemacs/user-config/typescript)
