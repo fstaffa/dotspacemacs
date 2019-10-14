@@ -62,6 +62,7 @@ This function should only modify configuration layer settings."
      (python :variables python-test-runner 'pytest)
      ranger
      restclient
+     rust
      search-engine
      semantic
      (shell :variables
@@ -69,6 +70,7 @@ This function should only modify configuration layer settings."
              shell-default-shell 'eshell
              shell-default-position 'bottom)
      spell-checking
+     sql
      syntax-checking
      terraform
      treemacs
@@ -538,7 +540,9 @@ you should place your code here."
 
 (defun dotspacemacs/user-config/own-menu ()
   (spacemacs/declare-prefix "o" "own-menu")
-  (spacemacs/set-leader-keys "og" 'engine/search-google))
+  (spacemacs/set-leader-keys "og" 'engine/search-google)
+  (spacemacs/set-leader-keys "ov" 'org-re-reveal-export-to-html-and-browse)
+  )
 
 (defun dotspacemacs/user-config/local-mac ()
   (when (file-exists-p "~/.personal-config.el")
