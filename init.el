@@ -32,8 +32,7 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(shell-scripts
-     csv
+   '(
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
@@ -41,6 +40,7 @@ This function should only modify configuration layer settings."
      ;; ----------------------------------------------------------------
      (auto-completion :variables auto-completion-enable-help-tooltip t)
      ;; better-defaults
+     csv
      csharp
      colors
      dash
@@ -69,19 +69,15 @@ This function should only modify configuration layer settings."
              shell-default-height 30
              shell-default-shell 'eshell
              shell-default-position 'bottom)
-     spell-checking
+     shell-scripts
      sql
+     spell-checking
      syntax-checking
      terraform
      treemacs
      typescript
      xkcd
      yaml
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
-     ;; spell-checking
-     ;; syntax-checking
      ;; version-control
      )
 
@@ -182,6 +178,11 @@ It should only modify the values of Spacemacs settings."
    ;; (default 'vim)
    dotspacemacs-editing-style 'vim
 
+   ;; If non-nil show the version string in the Spacemacs buffer. It will
+   ;; appear as (spacemacs version)@(emacs version)
+   ;; (default t)
+   dotspacemacs-startup-buffer-show-version t
+
    ;; Specify the startup banner. Default value is `official', it displays
    ;; the official spacemacs logo. An integer value is the index of text
    ;; banner, `random' chooses a random text banner in `core/banners'
@@ -235,7 +236,7 @@ It should only modify the values of Spacemacs settings."
 
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Fira Code"
+   dotspacemacs-default-font '("PragmataPro Mono Liga"
                                :size 13
                                :weight normal
                                :width normal
@@ -542,6 +543,7 @@ you should place your code here."
   (spacemacs/declare-prefix "o" "own-menu")
   (spacemacs/set-leader-keys "og" 'engine/search-google)
   (spacemacs/set-leader-keys "ov" 'org-re-reveal-export-to-html-and-browse)
+  (spacemacs/set-leader-keys "ow" 'ace-window)
   )
 
 (defun dotspacemacs/user-config/local-mac ()
@@ -617,7 +619,7 @@ you should place your code here."
                  ;; (42 . ".\\(?:\\(?:\\*\\*/\\)\\|\\(?:\\*[*/]\\)\\|[*/>]\\)")
                  (43 . ".\\(?:\\([>]\\)>?\\)")
                  ;; (43 . ".\\(?:\\(?:\\+\\+\\)\\|[+>]\\)")
-                 (45 . ".\\(?:\\(?:-[>-]\\|<<\\|>>\\)\\|[<>}~-]\\)")
+                 ;; (45 . ".\\(?:\\(?:-[>-]\\|<<\\|>>\\)\\|[<>}~-]\\)")
                  (46 . ".\\(?:\\(\\.<\\|[-=]\\)[-<=]?\\)")
                  ;; (46 . ".\\(?:\\(?:\\.[.<]\\)\\|[.=-]\\)")
                  (47 . ".\\(?:\\(//\\|==\\|[=>]\\)[/=>]?\\)")
