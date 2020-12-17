@@ -47,6 +47,7 @@ This function should only modify configuration layer settings."
      docker
      emacs-lisp
      git
+     graphviz
      (go :variables go-tab-width 4 go-use-golangci-lint t)
      helm
      html
